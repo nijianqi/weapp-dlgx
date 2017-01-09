@@ -1,0 +1,27 @@
+<!--index.wxml-->
+
+<view id="act-top">
+<navigator class="round-button active">活动</navigator>
+<navigator url="club" open-type="redirect" class="round-button">社团</navigator>
+</view>
+
+<form>
+<view class="search-wrap">
+        <input type="text" id="act_name"  placeholder="搜索活动" />
+</view>
+</form>
+
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">
+ <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="acttype-head">
+        <text>线上活动</text>
+        <text>更多</text>
+         <image src="../../images/arrow_right.png"alt=""></image>
+      
+</view>

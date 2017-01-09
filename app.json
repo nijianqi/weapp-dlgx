@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/topic/topic",
+    "pages/me/me"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#80d6c1",
+    "navigationBarTitleText": "大乐个学",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+    "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#80d6c1",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home_gray.png",
+      "selectedIconPath": "images/home.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/topic/topic",
+      "iconPath": "images/topic_gray.png",
+      "selectedIconPath": "images/topic.png",
+      "text": "话题"
+    }, {
+      "pagePath": "pages/me/me",
+      "iconPath": "images/person_gray.png",
+      "selectedIconPath": "images/person.png",
+      "text": "我的"
+    }]
+  },
+  "debug": true
+}
