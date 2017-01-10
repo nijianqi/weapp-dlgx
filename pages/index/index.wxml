@@ -1,26 +1,117 @@
+
 <!--index.wxml-->
-
 <view id="act-top">
-<navigator class="round-button active">活动</navigator>
-<navigator url="club" open-type="redirect" class="round-button">社团</navigator>
+  <navigator class="round-button active">活动</navigator>
+  <navigator url="club" open-type="redirect" class="round-button">社团</navigator>
 </view>
-
-<form>
-<view class="search-wrap">
-        <input type="text" id="act_name"  placeholder="搜索活动" focus="true"/>
+<view>
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索活动" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索活动</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+  <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+    <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <view>实时搜索文本</view>
+      </view>
+    </navigator>
+    <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <view>实时搜索文本</view>
+      </view>
+    </navigator>
+    <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <view>实时搜索文本</view>
+      </view>
+    </navigator>
+    <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <view>实时搜索文本</view>
+      </view>
+    </navigator>
+  </view>
 </view>
-</form>
-
 <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">
- <block wx:for="{{bannerList}}" wx:key="index">
+  <block wx:for="{{bannerList}}" wx:key="*this">
     <swiper-item>
       <image src="{{item.banner_img}}" class="slide-image" />
     </swiper-item>
   </block>
 </swiper>
-
 <view class="acttype-head">
-        <text>线上活动</text>
-        <text>更多</text>
-         <image src="../../images/arrow_right.png"alt=""></image>
+  <text>线上活动</text>
+  <text class="right">更多</text>
+</view>
+<view class="online-act">
+  <block wx:for="{{activityOnlineList}}" wx:key="*this">
+      <view class="online-act-item">
+        <image src="{{item.act_detail_img}}" class="image"></image>
+      </view>
+  </block>
+</view>
+<view class="acttype-head">
+  <text>线下活动</text>
+  <text class="right">更多</text>
+</view>
+<view id="act-list">
+ <block wx:for="{{activityLineList}}" wx:key="*this">
+        <view class="act-item">
+            <view class="act-img">
+                <image src="{{item.act_detail_img}}" alt=""></image>
+             </view>
+            <view class="act-info">
+                    <text class="act-title">{{item.act_name}}</text>
+                <view class="act-organize">
+                    <view wx:if="{{item.act_from_icon}}">
+                    <image src="{{item.act_from_icon}}" alt="" ></image>
+                   </view>
+                    <view wx:else>
+                    <image src="../images/actorg1.png" alt=""></image>
+                    </view>
+                    <text>发起人({{item.act_from_name}})</text>
+                </view>
+                <view class="act-operate"> <text class="act-time">活动时间: {{item.act_start_time}} - {{item.act_end_time}}</text>
+                </view>
+
+                <view class="act-operate">
+                    <text>{{item.act_release_time}}发布</text>
+                    <view wx:if="{{item.act_status == 1}}">
+                    <image src="../../images/activity_notstart.png" alt=""></image>
+                    </view>
+                    <view wx:elif="{{item.act_status == 2}}"> 
+                    <image src="../../images/activity_ing.png" alt=""></image>
+                    </view>
+                    <view wx:else>
+                    <image src="../../images/activity_over.png" alt=""></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+   </block>
+    <block wx:for="{{videoList}}" wx:key="*this">
+    <view class="act-item act-video-wrap">
+        <view class="act-video">
+            <video src="{{item.video_url}}" poster="{{item.video_img}}" controls></video>
+            <p><span class="fl one-line">{{item.video_name}}</span><span class="fr">2.33</span></p>
+        </view>
+        <view class="video-bottom">
+            <image src="../../images/actorg1.png" alt=""></image>
+            <text>大了个学</text>
+            <text class="fr">{{item.video_release_time}}发布</text>
+        </view>
+    </view>
+     </block>
 </view>

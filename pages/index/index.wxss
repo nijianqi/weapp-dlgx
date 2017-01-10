@@ -1,82 +1,182 @@
 /**index.wxss**/
 
 #act-top {
-    position: relative;
-    padding: .6rem;
-    text-align: center;
-    background-color: #fff;
+  position: relative;
+  padding: 0.6rem;
+  text-align: center;
+  background-color: #fff;
 }
 
 .round-button {
-    display: inline-block;
-    height: 2rem;
-    line-height: 2rem;
-    padding: 0 2rem;
-    border-radius: 18px;
-    color: #80d6c1;
-    background-color: #fff;
-    outline: none;
-    font-size: .8rem;
-    border: 1px solid #80d6c1;
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 2rem;
+  border-radius: 18px;
+  color: #80d6c1;
+  background-color: #fff;
+  outline: none;
+  font-size: 0.8rem;
+  border: 1px solid #80d6c1;
 }
 
 .round-button:last-of-type {
-    margin-left: -1.5rem;
+  margin-left: -1.5rem;
 }
 
 .round-button:active {
-    color: #80d6c1;
+  color: #80d6c1;
 }
 
 .round-button.active {
-    color: #fff;
-    position: relative;
-    z-index: 1;
-    background-color: #80d6c1;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  background-color: #80d6c1;
 }
 
 .round-button.active:active {
-    color: #fff;
+  color: #fff;
 }
 
-.search-wrap {
-    height: 2rem;
-    margin: .5rem;
-    border: .1rem solid #ddd;
-    border-radius: 5px;
-    padding: 0 .4rem;
-    line-height: 3rem;
-    background-color: #fff;
-    overflow: hidden;
+.searchbar-result {
+  margin-top: 0;
+  font-size: 14px;
 }
 
-.search-wrap > input {
-    height: 2rem;
-    border: none;
-    outline: none;
-    font-size: 0.8rem;
-    color: #444;
+.searchbar-result:before {
+  display: none;
+}
+
+.weui-cell {
+  padding: 12px 15px 12px 35px;
 }
 
 .swiper {
   height: 10rem;
 }
 
-.slide-image{
-    height: 100%;
-    width: 100%;
+.slide-image {
+  height: 100%;
+  width: 100%;
 }
 
 .acttype-head {
-    padding: .7rem 1rem;
-    padding-top: 1.4rem;
-    font-size: .8rem;
-    color: #666;
+  padding: 0.7rem 1rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: #666;
 }
 
-.acttype-head image {
-    height: .8rem;
-    vertical-align: -.1rem;
-    margin-left: .5rem;
-    width: .8rem;
+.acttype-head .right {
+  float: right;
+}
+
+.online-act {
+  height:11rem;
+  background-color: #fff;
+}
+
+.online-act-item {
+  float: left;
+  width: 47%;
+  padding: 0.25rem 0.25rem 0rem 0.25rem
+}
+
+.online-act .image {
+  width: 100%;
+  height: 5rem;
+  border-radius: 6px;
+}
+
+#act-list {
+    padding: 0 .5rem;
+}
+
+.act-item {
+    position: relative;
+    height: 8rem;
+    background-color: #fff;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.act-item:first-child {
+    margin-top: 0;
+}
+
+.act-video-wrap {
+    height: auto;
+}
+
+.act-video {
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.act-img {
+    float: left;
+    width: 6rem;
+}
+
+.act-img image {
+    width: 100%;
+    height: 8rem;
+}
+
+.act-info {
+    overflow: hidden;
+    padding: .2rem 1rem .4rem;
+}
+
+.act-title {
+    color: #222;
+    font-size: .73rem;
+    margin-bottom: .6rem;
+}
+
+.act-organize{
+    height:2rem;
+    margin-top: .4rem;
+}
+
+.act-organize image {
+    float: left;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+    border-radius: 100%;
+}
+
+.act-organize text {
+    float: left;
+    width: 77%;
+    color: #999;
+    margin-top: .6rem;
+    font-size: 0.75rem;
+}
+
+.act-time {
+    color: #333;
+    margin-top: 1rem;
+    font-size: 0.75rem;
+}
+
+.act-operate {
+    margin-top: .3rem;
+}
+
+.act-operate text {
+    color: #999;
+    font-size: 0.75rem;
+}
+
+.act-operate image {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    right: 0;
+    bottom: -0.8rem;
 }
