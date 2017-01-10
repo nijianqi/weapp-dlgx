@@ -58,6 +58,15 @@
     color: #444;
 }
 
+.swiper {
+  height: 10rem;
+}
+
+.slide-image{
+    height: 100%;
+    width: 100%;
+}
+
 .acttype-head {
     padding: .7rem 1rem;
     padding-top: 1.4rem;
