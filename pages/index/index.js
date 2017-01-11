@@ -14,7 +14,7 @@ Page({
   onLoad:function(options){
   var that = this;
   wx.request({
-  url: 'https://www.dlgx888.com/index.php/weapp',
+  url: 'https://www.dlgx888.com/weapp/index/index.html',
   data: {},
   header: {
       'content-type': 'application/json'
